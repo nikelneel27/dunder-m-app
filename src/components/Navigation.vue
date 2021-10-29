@@ -1,24 +1,24 @@
 <template>
   <div class="dm-navigation">
-    <div class="dm-navigation-link">
+    <div @click="scroll('dm-home-page')" class="dm-navigation-link">
       <div><i class="fas fa-home"></i></div>
       <div>Home</div>
     </div>
 
-    <div class="dm-navigation-link">
+    <div @click="scroll('dm-equity')" class="dm-navigation-link">
       <div><i class="fas fa-bolt"></i></div>
       <div>Equity</div>
     </div>
 
-    <div class="dm-navigation-link">
+    <div @click="scroll('dm-benefits')" class="dm-navigation-link">
       <div><i class="fas fa-briefcase-medical"></i></div>
       <div>Benefits</div>
     </div>
-    <div class="dm-navigation-link">
+    <div @click="scroll('dm-compensation')" class="dm-navigation-link">
       <div><i class="fas fa-rocket"></i></div>
       <div>Projection</div>
     </div>
-    <div class="dm-navigation-link">
+    <div @click="scroll('dm-about')" class="dm-navigation-link">
       <div><i class="fas fa-exclamation-circle fa-2x"></i></div>
       <div>About</div>
     </div>
@@ -26,12 +26,21 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    scroll(className) {
+      document.querySelector(`.${className}`).scrollIntoView({
+        behavior: "smooth",
+      });
+    },
+  },
+};
 </script>
 
 <style scoped>
 .dm-navigation {
   display: flex;
+  /* flex: 0 0 20%; */
   width: 100%;
   justify-content: space-between;
   text-align: center;
@@ -39,10 +48,12 @@ export default {};
   bottom: 0;
   left: 0;
   right: 0;
+  border: 1px solid #eee;
   box-shadow: 0 0 5px 0 #ccc;
   background-color: #fff;
   padding: 8px 0 12px;
   z-index: 9999;
+  font-size: 14px;
 }
 .dm-navigation-link {
   padding: 4px;

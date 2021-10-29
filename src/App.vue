@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Home />
+    <!-- <div class="bg-color"></div> -->
     <Navigation />
     <Equity />
     <Benefits />
@@ -45,15 +46,20 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin: 0 !important;
-  padding: 24px;
-  box-sizing: border-box;
-  /* background-color: #2e3653; */
+  /* color: #2c3e50; */
 }
 body {
+  box-sizing: border-box;
   margin: 0 !important;
   color: rgba(0, 0, 0, 0.85);
+  line-height: 1.5715;
+  font-size: 14px;
+  padding: 24px;
   /* background-color: black; */
 }
+/* .bg-color {
+  width: 100%;
+  height: 50px;
+  background-color: #2e3653;
+} */
 </style>

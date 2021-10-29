@@ -69,7 +69,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Home",
+};
 </script>
 
 <style  scoped>
@@ -123,26 +125,31 @@ p {
   color: #13cca5;
   font-size: 2rem;
   line-height: 3rem;
+  font-weight: 500;
 }
 .dm-home-job-salary-details-data-equ-val {
   color: #ffc742;
   font-size: 2rem;
   line-height: 3rem;
+  font-weight: 500;
 }
 .dm-home-job-salary-details-data-sign-val {
   color: #5563cb;
   font-size: 2rem;
   line-height: 3rem;
+  font-weight: 500;
 }
 .dm-home-job-salary-details-data-target-val {
   color: #6c7aff;
   font-size: 2rem;
   line-height: 3rem;
+  font-weight: 500;
 }
 .dm-home-job-salary-details-data-benefits-val {
   color: #ff448d;
   font-size: 2rem;
   line-height: 3rem;
+  font-weight: 500;
 }
 .dm-home-secondary-desc {
   margin-top: 20px;

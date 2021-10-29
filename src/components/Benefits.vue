@@ -1,12 +1,14 @@
 <template>
   <div class="dm-benefits">
     <div class="dm-benefits-section">
-      <div>Benefits</div>
-      <div>
-        <div>$20,400</div>
-        <div>Estimated annual value</div>
+      <div class="dm-benefits-section-top">
+        <div class="dm-benefits-section-title">Benefits</div>
+        <div class="dm-benefits-section-right">
+          <div>$20,400</div>
+          <p>Estimated annual value</p>
+        </div>
       </div>
-      <div>
+      <div class="dm-benefits-addition-section">
         <p>
           For you and<i class="fas fa-minus-circle"></i><span>0</span>
           <i class="fas fa-plus-circle"></i>dependents
@@ -15,93 +17,74 @@
       <div class="dm-benefits-data">
         <div class="dm-benefits-details">
           <i class="fas fa-notes-medical"></i>
-          <div>Medical</div>
-          <div>
-            Estimated value: $6,000 <i class="fas fa-exclamation-circle"></i>
-            <i class="fas fa-chevron-down"></i>
-            <p>
-              We cover 100% of the insurance cost for you and 50% for your
-              dependents
-            </p>
-          </div>
+          <AccordionBenefits
+            title="Medical"
+            subHeading="Estimated value: $6,000"
+            description="We cover 100% of the insurance cost for you and 50% for your
+              dependents"
+          />
         </div>
         <div class="dm-benefits-details">
           <i class="fas fa-tooth"></i>
-          <div>Dental</div>
-          <div>
-            Estimated value: $400 <i class="fas fa-exclamation-circle"></i>
-            <i class="fas fa-chevron-down"></i>
-            <p>
-              We cover 100% of the insurance cost for you and 50% for your
-              dependents
-            </p>
-          </div>
+          <AccordionBenefits
+            title="Dental"
+            subHeading="Estimated value: $400"
+            description="We cover 100% of the insurance cost for you and 50% for your
+              dependents"
+          />
         </div>
         <div class="dm-benefits-details">
           <i class="far fa-eye"></i>
-          <div>Vision</div>
-          <div>
-            Estimated value: $400 <i class="fas fa-exclamation-circle"></i>
-            <i class="fas fa-chevron-down"></i>
-            <p>
-              We cover 100% of the insurance cost for you and 50% for your
-              dependents
-            </p>
-          </div>
+          <AccordionBenefits
+            title="Vision"
+            subHeading="Estimated value: $400"
+            description="We cover 100% of the insurance cost for you and 50% for your
+              dependents"
+          />
         </div>
         <div class="dm-benefits-details">
           <i class="fas fa-hamburger"></i>
-          <div>Free Lucnhes</div>
-          <div>
-            Estimated value: $3,500 <i class="fas fa-exclamation-circle"></i>
-            <i class="fas fa-chevron-down"></i>
-            <p>We offer daily lunches and snacks in the office</p>
-          </div>
+          <AccordionBenefits
+            title="Free Lucnhes"
+            subHeading="Estimated value: $3,500 "
+            description="We offer daily lunches and snacks in the office"
+          />
         </div>
         <div class="dm-benefits-details">
           <i class="fas fa-umbrella-beach"></i>
-          <div>Unlimited PTO</div>
-          <div>
-            <i class="fas fa-chevron-down"></i>
-            <p>
-              Dunder Mifflin offers unlimited vacation. Feel free to take the
-              time off you need.
-            </p>
-          </div>
+          <AccordionBenefits
+            title="Unlimited PTO"
+            subHeading=""
+            description="Dunder Mifflin offers unlimited vacation. Feel free to take the
+              time off you need."
+          />
         </div>
-      </div>
-      <div class="dm-benefits-details">
-        <i class="fas fa-tooth"></i>
-        <div>401k</div>
-        <div>
-          Estimated value: $10,000 <i class="fas fa-exclamation-circle"></i>
-          <i class="fas fa-chevron-down"></i>
-          <p>
-            We offer 401k matching with our partner Human Interest and will
-            match up to 4% of your base salary.
-          </p>
+        <div class="dm-benefits-details">
+          <i class="fas fa-tooth"></i>
+          <AccordionBenefits
+            title="401k"
+            subHeading="Estimated value: $10,000 "
+            description="We offer 401k matching with our partner Human Interest and will
+            match up to 4% of your base salary."
+          />
         </div>
-      </div>
-      <div class="dm-benefits-details">
-        <i class="fas fa-dog"></i>
-        <div>Dog friendly office</div>
-        <div>
-          <p>
-            We love our office dogs! Bring your fur baby to work and join our
-            group of office dogs at Dunder Mifflin!
-          </p>
+        <div class="dm-benefits-details">
+          <i class="fas fa-dog"></i>
+          <AccordionBenefits
+            title="Dog friendly office"
+            subHeading=""
+            description="We love our office dogs! Bring your fur baby to work and join our
+            group of office dogs at Dunder Mifflin!"
+          />
         </div>
-      </div>
-      <div class="dm-benefits-details">
-        <i class="fas fa-hand-holding-usd"></i>
-        <div>Free Paper</div>
-        <div>
-          Estimated value: $100
-          <i class="fas fa-chevron-down"></i>
-          <p>
-            As an employee at Dunder Mifflin, you'll never have to worry about
-            buying paper for your printer ever again - it's all on us!
-          </p>
+        <div class="dm-benefits-details">
+          <i class="fas fa-hand-holding-usd"></i>
+          <AccordionBenefits
+            title="Free Paper"
+            subHeading="Estimated value: $100"
+            description="As an employee at Dunder Mifflin, you'll never have to worry about
+            buying paper for your printer ever again - it's all on us!"
+          />
         </div>
       </div>
     </div>
@@ -115,7 +98,13 @@
 </template>
 
 <script>
-export default {};
+import AccordionBenefits from "./AccordionBenefits.vue";
+export default {
+  name: "Benefits",
+  components: {
+    AccordionBenefits,
+  },
+};
 </script>
 
 <style scoped>
@@ -124,5 +113,43 @@ export default {};
   border-radius: 8px;
   margin-bottom: 12px;
   padding: 0.5rem 1rem;
+}
+.dm-benefits-section-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.dm-benefits-section-top {
+  display: flex;
+  justify-content: space-between;
+}
+.dm-benefits-section-right > div {
+  color: #ff448d;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.dm-benefits-section-right p {
+  font-weight: 500;
+}
+.dm-benefits-details {
+  display: flex;
+}
+.dm-benefits-details i {
+  font-size: 2rem;
+  color: rgb(68, 66, 66);
+  /* margin-top: 20px; */
+  padding: 15px;
+}
+.dm-benefits-addition-section {
+  opacity: 0.5;
+}
+.dm-benefits-addition-section i {
+  padding: 4px;
+  font-size: 1.2rem;
+}
+.dm-benefits-addition-section span {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ff448d;
 }
 </style>
