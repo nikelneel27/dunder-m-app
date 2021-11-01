@@ -2,10 +2,14 @@
   <div class="dm-about">
     <h1>About Dunder Mifflin</h1>
     <div>
-      <video width="377" height="200" controls>
-        <source src="https://www.youtube.com/watch?v=bV8i6oCgiAM" />
-        Can't load the video.
-      </video>
+      <iframe
+        height="200px"
+        src="https://www.youtube.com/embed/bV8i6oCgiAM"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </div>
     <div class="dm-about-desc">
       <h1>
@@ -13,7 +17,7 @@
         distributor with an emphasis on servicing small-business clients.
       </h1>
     </div>
-    <div>
+    <div class="dm-about-desc-para">
       <p>
         Dunder Mifflin Incorporated provides its customers quality office and
         information technology products, furniture, printing values and the
@@ -24,16 +28,30 @@
         stable working environment and company spirit.
       </p>
     </div>
-    <div class="dm-about-slider">
-      <div>
+
+    <!-- <div>
         <span class="dm-about-slide-icon">
           <i class="fas fa-chevron-left"></i
         ></span>
         <span class="dm-about-slide-icon">
           <i class="fas fa-chevron-right"></i
         ></span>
-      </div>
-      <div>
+      </div> -->
+    <div class="dm-about-slider">
+      <VueSlickCarousel
+        ref="c1"
+        :infinite="false"
+        :centerMode="true"
+        centerPadding="2px"
+        :slidesToShow="1"
+        :slidesToScroll="1"
+      >
+        <template #prevArrow>
+          <div class="custom-arrow"><i class="fas fa-chevron-left"></i></div>
+        </template>
+        <template #nextArrow>
+          <div class="custom-arrow"><i class="fas fa-chevron-right"></i></div>
+        </template>
         <div class="dm-about-slider-data">
           <h4>Growth</h4>
           <p>
@@ -68,40 +86,48 @@
             relationships with our employees and staff.
           </p>
         </div>
-      </div>
-      <div class="dm-about-all-details">
-        <div>
+      </VueSlickCarousel>
+
+      <div>
+        <div class="dm-about-all-details">
           <div class="dm-about-details">
-            <div>Website</div>
-            <div>https://www.peacocktv.com/stream-tv/the-office</div>
+            <div class="dm-about-details-title">Website</div>
+            <div>
+              <a href="https://www.peacocktv.com/stream-tv/the-office"
+                >https://www.peacocktv.com/stream-tv/the-office</a
+              >
+            </div>
           </div>
           <div class="dm-about-details">
-            <div>Headquarters</div>
+            <div class="dm-about-details-title">Headquarters</div>
             <div>Scranton, PA</div>
           </div>
           <div class="dm-about-details">
-            <div>Company Size</div>
+            <div class="dm-about-details-title">Company Size</div>
             <div>50-99</div>
           </div>
           <div class="dm-about-details">
-            <div>Total Funding</div>
+            <div class="dm-about-details-title">Total Funding</div>
             <div>$20M</div>
           </div>
           <div class="dm-about-details">
-            <div>Last Funding Type</div>
+            <div class="dm-about-details-title">Last Funding Type</div>
             <div>Series B</div>
           </div>
         </div>
         <div class="dm-about-more-details">
           <div class="dm-about-more-details-data">
-            <div>Investors</div>
-            <div>
-              Vance Refrigeration, The Michael Scott Paper Company, Sabre
-              International, Athleap
+            <div class="dm-about-more-details-data-title">Investors</div>
+            <div class="dm-about-more-details-data-link">
+              <a
+                href="https://theoffice.fandom.com/wiki/The_Michael_Scott_Paper_Company"
+                >Vance Refrigeration, The Michael Scott Paper Company, Sabre
+                International, Athleap</a
+              >
             </div>
           </div>
           <div class="dm-about-more-details-data">
-            <div>Leadership</div>
+            <div class="dm-about-more-details-data-title">Leadership</div>
             <div>
               David Wallace (CEO), Michael Scott (Regional Manager), Jan
               Levinson (VP Sales), Jim Halpert (Sales Manager), Pamela Beesly
@@ -114,17 +140,26 @@
 
     <!-- News section -->
     <section>
-      <div>
-        <div><h2>In the news</h2></div>
-        <div>
-          <span class="dm-about-slide-icon">
-            <i class="fas fa-chevron-left"></i
-          ></span>
-          <span class="dm-about-slide-icon">
-            <i class="fas fa-chevron-right"></i
-          ></span>
-        </div>
-        <div>
+      <div><h2>In the news</h2></div>
+
+      <div class="dm-about-news">
+        <VueSlickCarousel
+          ref="c2"
+          :centerMode="true"
+          centerPadding="2px"
+          :slidesToShow="1"
+          :slidesToScroll="1"
+        >
+          <template #prevArrow>
+            <div class="custom-arrow-news">
+              <i class="fas fa-chevron-left"></i>
+            </div>
+          </template>
+          <template #nextArrow>
+            <div class="custom-arrow-news">
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </template>
           <div class="dm-about-news-card">
             <div>
               <img
@@ -170,15 +205,20 @@
               </p>
             </div>
           </div>
-        </div>
+        </VueSlickCarousel>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+// optional style for arrows & dots
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 export default {
   name: "About",
+  components: { VueSlickCarousel },
 };
 </script>
 
@@ -188,19 +228,141 @@ export default {
   text-align: left;
   padding-left: 32px;
 }
+.dm-about-slider {
+  margin-top: 80px;
+}
 .dm-about-slide-icon {
   border: 1px solid #ccc;
 }
-.dm-about-slider-data {
+/* .dm-about-slider-data {
   border: 1px solid #ccc;
   border-radius: 4px;
-}
+} */
 .dm-about-news-card {
-  display: flex;
+  display: flex !important;
   border: 1px solid #ccc;
   border-radius: 8px;
+  margin-bottom: 25px;
 }
 .dm-about-news-card img {
   border-radius: 8px;
 }
+
+/* ::v-deep .slick-slide {
+ 
+} */
+.dm-about-slider-data {
+  text-align: left;
+  border-radius: 8px !important;
+  border: 1px solid #ddd !important;
+  height: 100%;
+  width: 100%;
+
+  /* padding: 10px; */
+}
+.dm-about-slider-data h4,
+.dm-about-slider-data p {
+  padding: 0 10px;
+}
+
+button.slick-arrow.slick-next {
+  right: 0 !important;
+}
+.dm-about-all-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: left;
+  margin: 24px 0;
+}
+.dm-about-details {
+  padding: 12px;
+  width: 43%;
+  font-weight: 500;
+}
+.dm-about-details a {
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.dm-about-more-details-data {
+  text-align: left;
+  margin: 24px 0;
+  font-weight: 500;
+}
+.dm-about-more-details-data-link a {
+  color: #0b5656;
+  text-decoration: none;
+  font-weight: 500;
+}
+.dm-about-details-title {
+  color: #8d8d8d;
+}
+.dm-about-more-details-data-title {
+  color: #8d8d8d;
+}
+.dm-about-desc,
+.dm-about-desc h1 {
+  font-weight: 500;
+  font-size: 2rem;
+}
+.dm-about-desc-para {
+  text-align: left;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: "";
+}
+
+.slick-prev i,
+.slick-next i {
+  font-size: 1rem;
+  color: black;
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.slick-next {
+  right: auto;
+  left: 40px;
+  top: -50px;
+}
+.slick-prev {
+  left: 0;
+  top: -50px;
+}
+
+custom-arrow-news.slick-next {
+  right: 0;
+  /* left: 40px; */
+  top: 0;
+}
+custom-arrow-news.slick-prev {
+  right: 0;
+  top: -50px;
+}
+iframe {
+  width: 100%;
+}
+
+dm-about-news > vue-slick-carousel {
+  margin-right: 20px;
+}
+.dm-about-news-card p {
+  font-weight: bold;
+  font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
 </style>
+
+
+
+
+

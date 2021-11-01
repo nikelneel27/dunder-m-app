@@ -4,14 +4,19 @@
       <div class="dm-benefits-section-top">
         <div class="dm-benefits-section-title">Benefits</div>
         <div class="dm-benefits-section-right">
-          <div>$20,400</div>
+          <div>$ {{ annualValueCalc | currencyFilter }}</div>
           <p>Estimated annual value</p>
         </div>
       </div>
       <div class="dm-benefits-addition-section">
         <p>
-          For you and<i class="fas fa-minus-circle"></i><span>0</span>
-          <i class="fas fa-plus-circle"></i>dependents
+          For you and<i
+            @click="minusDependentsCount"
+            class="fas fa-minus-circle"
+          ></i
+          ><span>{{ numberOfDepends }}</span>
+          <i @click="addDependentsCount" class="fas fa-plus-circle"></i
+          >dependents
         </p>
       </div>
       <div class="dm-benefits-data">
@@ -19,7 +24,9 @@
           <i class="fas fa-notes-medical"></i>
           <AccordionBenefits
             title="Medical"
-            subHeading="Estimated value: $6,000"
+            :subHeading="`Estimated value: ${
+              medicalValueCalc | currencyFilter
+            }`"
             description="We cover 100% of the insurance cost for you and 50% for your
               dependents"
           />
@@ -28,7 +35,7 @@
           <i class="fas fa-tooth"></i>
           <AccordionBenefits
             title="Dental"
-            subHeading="Estimated value: $400"
+            :subHeading="`Estimated value: ${dentalAndVisionValueCalc}`"
             description="We cover 100% of the insurance cost for you and 50% for your
               dependents"
           />
@@ -37,7 +44,7 @@
           <i class="far fa-eye"></i>
           <AccordionBenefits
             title="Vision"
-            subHeading="Estimated value: $400"
+            :subHeading="`Estimated value: ${dentalAndVisionValueCalc}`"
             description="We cover 100% of the insurance cost for you and 50% for your
               dependents"
           />
@@ -103,6 +110,45 @@ export default {
   name: "Benefits",
   components: {
     AccordionBenefits,
+  },
+  data() {
+    return {
+      numberOfDepends: 0,
+    };
+  },
+  computed: {
+    annualValueCalc() {
+      return (
+        this.medicalValueCalc +
+        2 * this.dentalAndVisionValueCalc +
+        3500 +
+        100 +
+        10000
+      );
+    },
+    medicalValueCalc() {
+      return 3000 * this.numberOfDepends + 6000;
+    },
+    dentalAndVisionValueCalc() {
+      return 200 * this.numberOfDepends + 400;
+    },
+  },
+
+  methods: {
+    addDependentsCount() {
+      this.numberOfDepends += 1;
+    },
+    minusDependentsCount() {
+      if (this.numberOfDepends == 0) {
+        return;
+      }
+      this.numberOfDepends -= 1;
+    },
+  },
+  filters: {
+    currencyFilter(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
   },
 };
 </script>

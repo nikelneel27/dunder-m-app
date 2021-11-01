@@ -48,8 +48,8 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  border: 1px solid #eee;
-  box-shadow: 0 0 5px 0 #ccc;
+  border-top: 1px solid #eee;
+  box-shadow: 0 0 5px 0 #ddd;
   background-color: #fff;
   padding: 8px 0 12px;
   z-index: 9999;
@@ -60,6 +60,7 @@ export default {
   font-weight: 400;
   color: #70767d;
   opacity: 0.8;
+  width: 20%;
 }
 .dm-navigation-link i {
   color: #70767d;
