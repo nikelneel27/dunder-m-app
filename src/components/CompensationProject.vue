@@ -112,30 +112,62 @@
       </div>
 
       <div class="dm-compensation-company-chart">
-        <!-- <Echart /> -->
-        <LineChart />
+        <Echart />
+        <!-- <LineChart /> -->
       </div>
       <div class="dm-compensation-company-slider">
-        <Slider :barColor="black" />
-        <Slider />
+        <div class="dm-compensation-company-slider-annual-salary">
+          <div class="dm-compensation-company-slider-annual-salary-text">
+            Annual base salary increase: <strong> {{ value1 }} % </strong>
+          </div>
+
+          <vue-slider
+            v-model="value1"
+            :lazy="true"
+            :interval="0.1"
+            :min="0"
+            :max="15"
+            v-bind="options"
+          ></vue-slider>
+        </div>
+        <div class="dm-compensation-company-slider-taget-bonus">
+          <div class="dm-compensation-company-slider-annual-salary-text">
+            Target bonus: <strong>{{ value2 }} %</strong>
+          </div>
+
+          <vue-slider
+            v-model="value2"
+            :lazy="true"
+            :interval="0.1"
+            :min="0"
+            :max="10"
+            v-bind="options"
+          ></vue-slider>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import Echart from "./Echart.vue";
-import LineChart from "./LineChart.vue";
-import Slider from "./Slider.vue";
+import Echart from "./Echart.vue";
+import VueSlider from "vue-slider-component";
+import "vue-slider-component/theme/antd.css";
 
 export default {
   // components: { Echart },
   name: "CompensationProject",
-  components: { LineChart, Slider },
+  components: { Echart, VueSlider },
   data() {
     return {
       isHidden: true,
       selectedOption: "Current - 1x",
+      value1: 0,
+      value2: 0,
+      options: {
+        dotSize: 34,
+        tooltip: false,
+      },
     };
   },
 };
@@ -230,15 +262,37 @@ export default {
   padding: 5px 20px 5px 20px;
 }
 
-.v-switch-core {
-  width: 54px;
-  height: 32px;
-  background-color: rgb(191, 203, 217);
-  border-radius: 34px;
+::v-deep .v-switch-core {
+  width: 54px !important;
+  height: 32px !important;
+  background-color: rgb(191, 203, 217) !important;
+  border-radius: 100px !important;
 }
-.v-switch-button {
-  width: 24px;
-  height: 24px;
+::v-deep .v-switch-button {
+  width: 24px !important;
+  height: 24px !important;
+}
+.dm-compensation-company-slider {
+  margin: 30px auto;
+}
+/* ::v-deep .vue-slider:hover {
+  background-color: red !important;
+} */
+
+::v-deep .vue-slider-process {
+  background-color: red !important;
+}
+
+::v-deep .vue-slider-dot-handle {
+  background-color: red !important;
+  border: none !important;
+}
+::v-deep .vue-slider-dot-tooltip {
+  display: none !important;
+}
+
+.dm-compensation-company-slider-annual-salary-text {
+  margin: 10px;
 }
 
 /* toggle-button .v-switch-core {

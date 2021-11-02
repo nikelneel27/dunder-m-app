@@ -66,8 +66,16 @@ body {
   color: rgba(0, 0, 0, 0.85);
   line-height: 1.5715;
   font-size: 14px;
-  padding: 24px 24px 100px;
+  padding: 24px 0 78px;
   background-color: white;
+}
+.dm-home-page,
+.dm-equity,
+.dm-benefits-main,
+.dm-compensation,
+.dm-about {
+  padding: 0 24px;
+  border-bottom: 3rem solid #10131f;
 }
 /* .bg-color {
   width: 100%;
@@ -76,8 +84,8 @@ body {
   background-color: #2e3653;
 } */
 .footer {
-  padding: 40px 0 40px 0;
-  background-color: #020220;
+  padding: 20px 24px 40px;
+  background-color: #10131f;
   color: white;
   /* margin-bottom: ; */
 }

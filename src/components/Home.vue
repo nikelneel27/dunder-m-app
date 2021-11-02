@@ -65,7 +65,6 @@
         steps!
       </p>
     </div>
-    <div class="bg-color"></div>
   </div>
 </template>
 
@@ -158,9 +157,5 @@ p {
 }
 .dm-home-secondary-desc p {
   margin-top: 0;
-}
-.bg-color {
-  background-color: rgb(19, 18, 18);
-  padding-bottom: 3rem;
 }
 </style>

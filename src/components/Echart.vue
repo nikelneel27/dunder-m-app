@@ -1,134 +1,126 @@
 <template>
-  <div></div>
+  <div id="main"></div>
 </template>
 
 <script>
 import * as echarts from "echarts";
-var chartDom = document.getElementById("main");
-var myChart = echarts.init(chartDom);
-var option;
 
-option = {
-  tooltip: {
-    trigger: "axis",
-    axisPointer: {
-      type: "shadow",
-    },
-  },
-  legend: {},
-  grid: {
-    left: "3%",
-    right: "4%",
-    bottom: "3%",
-    containLabel: true,
-  },
-  xAxis: [
-    {
-      type: "category",
-      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-    },
-  ],
-  yAxis: [
-    {
-      type: "value",
-    },
-  ],
-  series: [
-    {
-      name: "Direct",
-      type: "bar",
-      emphasis: {
-        focus: "series",
-      },
-      data: [320, 332, 301, 334, 390, 330, 320],
-    },
-    {
-      name: "Email",
-      type: "bar",
-      stack: "Ad",
-      emphasis: {
-        focus: "series",
-      },
-      data: [120, 132, 101, 134, 90, 230, 210],
-    },
-    {
-      name: "Union Ads",
-      type: "bar",
-      stack: "Ad",
-      emphasis: {
-        focus: "series",
-      },
-      data: [220, 182, 191, 234, 290, 330, 310],
-    },
-    {
-      name: "Video Ads",
-      type: "bar",
-      stack: "Ad",
-      emphasis: {
-        focus: "series",
-      },
-      data: [150, 232, 201, 154, 190, 330, 410],
-    },
-    {
-      name: "Search Engine",
-      type: "bar",
-      data: [862, 1018, 964, 1026, 1679, 1600, 1570],
-      emphasis: {
-        focus: "series",
-      },
-      markLine: {
-        lineStyle: {
-          type: "dashed",
+export default {
+  mounted() {
+    var chartDom = document.getElementById("main");
+    var myChart = echarts.init(chartDom);
+    var option;
+    option = {
+      //   legend: {},
+      xAxis: [
+        {
+          type: "category",
+          axisLine: {
+            show: false,
+          },
+          grid: {
+            show: false,
+          },
+          axisLabel: {
+            show: true,
+          },
+          axisTick: {
+            show: false,
+          },
+          data: ["Year1", "Year2", "Year3", "Year4"],
+          itemStyle: {
+            boderRadius: 8,
+          },
         },
-        data: [[{ type: "min" }, { type: "max" }]],
-      },
-    },
-    {
-      name: "Baidu",
-      type: "bar",
-      barWidth: 5,
-      stack: "Search Engine",
-      emphasis: {
-        focus: "series",
-      },
-      data: [620, 732, 701, 734, 1090, 1130, 1120],
-    },
-    {
-      name: "Google",
-      type: "bar",
-      stack: "Search Engine",
-      emphasis: {
-        focus: "series",
-      },
-      data: [120, 132, 101, 134, 290, 230, 220],
-    },
-    {
-      name: "Bing",
-      type: "bar",
-      stack: "Search Engine",
-      emphasis: {
-        focus: "series",
-      },
-      data: [60, 72, 71, 74, 190, 130, 110],
-    },
-    {
-      name: "Others",
-      type: "bar",
-      stack: "Search Engine",
-      emphasis: {
-        focus: "series",
-      },
-      data: [62, 82, 91, 84, 109, 110, 120],
-    },
-  ],
+      ],
+      yAxis: [
+        {
+          type: "value",
+          axisLine: {
+            show: false,
+          },
+          grid: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+
+          axisLabel: {
+            show: false,
+          },
+        },
+      ],
+      series: [
+        {
+          name: "Base Salary",
+          type: "bar",
+          stack: "Ad",
+          barWidth: 75,
+          data: [100000, 150000, 180000, 200000, 210000],
+          itemStyle: {
+            color: "rgb(19, 204, 165)",
+            borderWidth: 1,
+          },
+        },
+        {
+          name: "Equity ",
+          type: "bar",
+          stack: "Ad",
+          barWidth: 75,
+          data: [387500, 400000, 420000, 445000, 550000],
+          itemStyle: {
+            color: "rgb(255, 199, 66)",
+          },
+        },
+        {
+          name: "Sign-on Bonus",
+          type: "bar",
+          stack: "Ad",
+          barWidth: 75,
+          data: [10000, 12000, 12200, 13000, 15000],
+          itemStyle: {
+            color: "rgb(85, 99, 203)",
+          },
+        },
+        {
+          name: "Target Bonus",
+          type: "bar",
+          stack: "Ad",
+          barWidth: 75,
+          data: [9900, 10900, 11200, 12000, 13000],
+          itemStyle: {
+            color: "rgb(108, 122, 255)",
+          },
+        },
+        {
+          name: "Benefits",
+          type: "bar",
+          stack: "Ad",
+          data: [20400, 19400, 21000, 22000, 23000],
+          barWidth: 75,
+          itemStyle: {
+            color: "rgb(255, 68, 141)",
+          },
+        },
+        {
+          itemStyle: {
+            borderRadius: 18,
+            borderColor: "red",
+          },
+        },
+      ],
+    };
+    option && myChart.setOption(option);
+  },
 };
-
-option && myChart.setOption(option);
-
-export default {};
 </script>
 
-<style>
+<style scoped>
+#main {
+  width: 100%;
+  height: 300px;
+}
 </style>
 
 

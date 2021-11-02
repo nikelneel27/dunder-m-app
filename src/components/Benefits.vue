@@ -1,5 +1,5 @@
 <template>
-  <div class="dm-benefits">
+  <div class="dm-benefits-main">
     <div class="dm-benefits-section">
       <div class="dm-benefits-section-top">
         <div class="dm-benefits-section-title">Benefits</div>

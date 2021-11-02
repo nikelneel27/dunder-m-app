@@ -81,7 +81,7 @@
         </p>
       </div>
       <div class="dm-equity-chart">
-        <LineChart />
+        <LineEchart />
       </div>
       <div class="dm-section-border"></div>
       <div class="dm-equity-section-border"></div>
@@ -240,7 +240,7 @@
 </template>
 
 <script>
-import LineChart from "./LineChart.vue";
+import LineEchart from "./LineEchart.vue";
 import Accordion from "./Accordion.vue";
 export default {
   name: "Equity",
@@ -252,7 +252,7 @@ export default {
   },
   components: {
     Accordion,
-    LineChart,
+    LineEchart,
   },
 };
 </script>

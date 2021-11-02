@@ -283,6 +283,7 @@ button.slick-arrow.slick-next {
 .dm-about-details a {
   text-decoration: none;
   word-break: break-word;
+  color: #0b5656;
 }
 
 .dm-about-more-details-data {
