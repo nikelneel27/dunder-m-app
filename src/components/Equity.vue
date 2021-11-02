@@ -262,6 +262,7 @@ export default {
   text-align: left;
   /* padding: 24px; */
   background-color: #fff;
+  padding-top: 30px;
 }
 .dm-equity-drop-down {
   background: #d9d9d9;
@@ -439,7 +440,7 @@ export default {
 
 .dm-faqs-footer-para {
   opacity: 0.5;
-  margin-top: 50px;
+  padding: 20px 0 20px;
 }
 .tooltip {
   display: block !important;

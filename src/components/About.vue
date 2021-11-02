@@ -223,6 +223,10 @@ export default {
 </script>
 
 <style scoped>
+.dm-about h1 {
+  margin-top: 30px;
+  text-align: left;
+}
 .dm-about-desc {
   border-left: 4px solid rgb(129, 129, 247);
   text-align: left;

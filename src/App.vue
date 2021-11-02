@@ -71,7 +71,7 @@ body {
 }
 .dm-home-page,
 .dm-equity,
-.dm-benefits-main,
+.dm-benefits,
 .dm-compensation,
 .dm-about {
   padding: 0 24px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="dm-benefits-main">
+  <div class="dm-benefits">
     <div class="dm-benefits-section">
       <div class="dm-benefits-section-top">
         <div class="dm-benefits-section-title">Benefits</div>
@@ -154,6 +154,9 @@ export default {
 </script>
 
 <style scoped>
+.dm-benefits {
+  padding-top: 30px;
+}
 .dm-benefits-details {
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -197,5 +200,10 @@ export default {
   font-size: 1.2rem;
   font-weight: 800;
   color: #ff448d;
+}
+.dm-benefits-footer > p {
+  opacity: 0.5;
+  text-align: left;
+  padding: 20px 0 20px;
 }
 </style>

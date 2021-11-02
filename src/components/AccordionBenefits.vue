@@ -1,5 +1,5 @@
 <template>
-  <div class="dm-benefits">
+  <div class="dm-benefits-accordion">
     <div class="dm-benefits-title">{{ title }}</div>
     <div class="dm-benefits-details">
       <span>{{ subHeading }}</span>
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.dm-benefits {
+.dm-benefits-accordion {
   padding: 12px 16px 12px 12px;
   text-align: left;
 }

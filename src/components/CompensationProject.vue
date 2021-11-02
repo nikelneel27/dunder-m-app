@@ -19,8 +19,8 @@
           <toggle-button
             @change="onChangeEventHandler"
             :switch-color="{
-              checked: 'rgb(108, 122, 255)',
-              unchecked: 'rgb(85, 99, 203)',
+              checked: 'rgb(255, 68, 141)',
+              unchecked: 'rgba(255, 68, 141, 0.4)',
               disabled: '#CCCCCC',
             }"
           />
@@ -36,7 +36,7 @@
             @change="onChangeEventHandler"
             :switch-color="{
               checked: 'rgb(108, 122, 255)',
-              unchecked: 'rgb(85, 99, 203)',
+              unchecked: 'rgba(108, 122, 255,0.4)',
               disabled: '#CCCCCC',
             }"
           />
@@ -51,8 +51,8 @@
           <toggle-button
             @change="onChangeEventHandler"
             :switch-color="{
-              checked: 'rgb(108, 122, 255)',
-              unchecked: 'rgb(85, 99, 203)',
+              checked: 'rgb(85, 99, 203)',
+              unchecked: 'rgba(85, 99, 203,0.4)',
               disabled: '#CCCCCC',
             }"
           />
@@ -67,8 +67,8 @@
           <toggle-button
             @change="onChangeEventHandler"
             :switch-color="{
-              checked: 'rgb(108, 122, 255)',
-              unchecked: 'rgb(85, 99, 203)',
+              checked: 'rgb(255, 199, 66)',
+              unchecked: 'rgba(255, 199, 66,0.4)',
               disabled: '#CCCCCC',
             }"
           />
@@ -84,8 +84,8 @@
           <toggle-button
             @change="onChangeEventHandler"
             :switch-color="{
-              checked: 'rgb(108, 122, 255)',
-              unchecked: 'rgb(85, 99, 203)',
+              checked: 'rgb(19, 204, 165)',
+              unchecked: 'rgba(19, 204, 165,0.4)',
               disabled: '#CCCCCC',
             }"
           />
@@ -174,6 +174,9 @@ export default {
 </script>
 
 <style scoped>
+.dm-compensation {
+  padding-top: 10px;
+}
 .dm-compensation-year1 {
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -263,10 +266,11 @@ export default {
 }
 
 ::v-deep .v-switch-core {
-  width: 54px !important;
+  width: 60px !important;
   height: 32px !important;
-  background-color: rgb(191, 203, 217) !important;
+  background-color: #efefef !important;
   border-radius: 100px !important;
+  border: 1px solid #ccc !important;
 }
 ::v-deep .v-switch-button {
   width: 24px !important;
@@ -280,11 +284,11 @@ export default {
 } */
 
 ::v-deep .vue-slider-process {
-  background-color: red !important;
+  background-color: rgb(108, 122, 255) !important;
 }
 
 ::v-deep .vue-slider-dot-handle {
-  background-color: red !important;
+  background-color: rgb(108, 122, 255) !important;
   border: none !important;
 }
 ::v-deep .vue-slider-dot-tooltip {
