@@ -112,7 +112,7 @@
       </div>
 
       <div class="dm-compensation-company-chart">
-        <Echart />
+        <Echart :value1="value1" :value2="value2" />
         <!-- <LineChart /> -->
       </div>
       <div class="dm-compensation-company-slider">

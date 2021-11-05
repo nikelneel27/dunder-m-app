@@ -6,112 +6,155 @@
 import * as echarts from "echarts";
 
 export default {
+  // updateCharts(val) {
+  //       const updatedSeries = this.option.series.map(item => {
+  //        const data = item.data.map(value => value*val)
+  //         return {
+  //           ...this.option.series,
+  //           data ,
+  //         }
+  //       }
+
+  data() {
+    return {
+      option: {
+        //   legend: {},
+        xAxis: [
+          {
+            type: "category",
+            axisLine: {
+              show: false,
+            },
+            grid: {
+              show: false,
+            },
+            axisLabel: {
+              show: true,
+            },
+            axisTick: {
+              show: false,
+            },
+            data: ["Year1", "Year2", "Year3", "Year4"],
+          },
+        ],
+        yAxis: [
+          {
+            type: "value",
+            axisLine: {
+              show: false,
+            },
+            grid: {
+              show: false,
+            },
+            splitLine: {
+              show: false,
+            },
+
+            axisLabel: {
+              show: false,
+            },
+          },
+        ],
+        series: [
+          {
+            name: "Base Salary",
+            type: "bar",
+            stack: "Ad",
+            barWidth: 75,
+            data: [100000, 100000, 100000, 100000, 100000],
+            itemStyle: {
+              barBorderRadius: [0, 0, 20, 20],
+              color: "rgb(19, 204, 165)",
+              padding: 10,
+            },
+          },
+          {
+            name: "Equity ",
+            type: "bar",
+            stack: "Ad",
+            barWidth: 75,
+            data: [77500, 77500, 77500, 77500, 77500],
+            itemStyle: {
+              color: "rgb(255, 199, 66)",
+              padding: [5, 4, 4, 5],
+            },
+          },
+          {
+            name: "Sign-on Bonus",
+            type: "bar",
+            stack: "Ad",
+            barWidth: 75,
+            data: [10000, 0, 0, 0, 0],
+            itemStyle: {
+              color: "rgb(85, 99, 203)",
+              padding: [5, 4, 4, 5],
+            },
+          },
+          {
+            name: "Target Bonus",
+            type: "bar",
+            stack: "Ad",
+            barWidth: 75,
+            data: [0, 0, 0, 0, 0],
+            itemStyle: {
+              color: "rgb(108, 122, 255)",
+              padding: [5, 4, 4, 5],
+            },
+          },
+          {
+            name: "Benefits",
+            type: "bar",
+            stack: "Ad",
+
+            data: [20400, 19400, 21000, 22000, 23000],
+            barWidth: 75,
+            itemStyle: {
+              barBorderRadius: [20, 20, 0, 0],
+              color: "rgb(255, 68, 141)",
+              padding: [5, 4, 4, 5],
+            },
+          },
+        ],
+      },
+    };
+  },
   mounted() {
     var chartDom = document.getElementById("main");
-    var myChart = echarts.init(chartDom);
-    var option;
-    option = {
-      //   legend: {},
-      xAxis: [
-        {
-          type: "category",
-          axisLine: {
-            show: false,
-          },
-          grid: {
-            show: false,
-          },
-          axisLabel: {
-            show: true,
-          },
-          axisTick: {
-            show: false,
-          },
-          data: ["Year1", "Year2", "Year3", "Year4"],
-          itemStyle: {
-            boderRadius: 8,
-          },
-        },
-      ],
-      yAxis: [
-        {
-          type: "value",
-          axisLine: {
-            show: false,
-          },
-          grid: {
-            show: false,
-          },
-          splitLine: {
-            show: false,
-          },
+    this.myChart = echarts.init(chartDom, null, { renderer: "svg" });
 
-          axisLabel: {
-            show: false,
-          },
-        },
-      ],
-      series: [
-        {
-          name: "Base Salary",
-          type: "bar",
-          stack: "Ad",
-          barWidth: 75,
-          data: [100000, 150000, 180000, 200000, 210000],
-          itemStyle: {
-            color: "rgb(19, 204, 165)",
-            borderWidth: 1,
-          },
-        },
-        {
-          name: "Equity ",
-          type: "bar",
-          stack: "Ad",
-          barWidth: 75,
-          data: [387500, 400000, 420000, 445000, 550000],
-          itemStyle: {
-            color: "rgb(255, 199, 66)",
-          },
-        },
-        {
-          name: "Sign-on Bonus",
-          type: "bar",
-          stack: "Ad",
-          barWidth: 75,
-          data: [10000, 12000, 12200, 13000, 15000],
-          itemStyle: {
-            color: "rgb(85, 99, 203)",
-          },
-        },
-        {
-          name: "Target Bonus",
-          type: "bar",
-          stack: "Ad",
-          barWidth: 75,
-          data: [9900, 10900, 11200, 12000, 13000],
-          itemStyle: {
-            color: "rgb(108, 122, 255)",
-          },
-        },
-        {
-          name: "Benefits",
-          type: "bar",
-          stack: "Ad",
-          data: [20400, 19400, 21000, 22000, 23000],
-          barWidth: 75,
-          itemStyle: {
-            color: "rgb(255, 68, 141)",
-          },
-        },
-        {
-          itemStyle: {
-            borderRadius: 18,
-            borderColor: "red",
-          },
-        },
-      ],
-    };
-    option && myChart.setOption(option);
+    this.option && this.myChart.setOption(this.option);
+  },
+  props: {
+    value1: {
+      type: Number,
+      default: 0,
+    },
+    value2: {
+      type: Number,
+      default: 0,
+    },
+  },
+  watch: {
+    value1(val) {
+      this.updateCharts(val);
+    },
+    value2(val) {
+      this.updateCharts(val);
+    },
+  },
+  methods: {
+    updateCharts(val) {
+      const updatedSeries = this.option.series.map((item) => {
+        const data = item.data.map((value) => value * val);
+        return {
+          ...item,
+          data,
+        };
+      });
+      this.option = { ...this.option, series: updatedSeries };
+      this.myChart.setOption(this.option);
+      console.log(this.option);
+    },
   },
 };
 </script>

@@ -10,17 +10,6 @@ export default {
     var myChart = echarts.init(chartDom);
     var option;
 
-    // function data() {
-    //   var x;
-    //   var data = [];
-
-    //   for (x = 0; x < 20; x++) {
-    //     data = x;
-    //     console.log(data);
-    //   }
-    //   return data;
-    // }
-
     option = {
       xAxis: {
         type: "category",

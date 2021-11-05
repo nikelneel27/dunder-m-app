@@ -24,9 +24,7 @@
           <i class="fas fa-notes-medical"></i>
           <AccordionBenefits
             title="Medical"
-            :subHeading="`Estimated value: ${
-              medicalValueCalc | currencyFilter
-            }`"
+            :subHeading="`Estimated value: ${medicalValueCalc}`"
             description="We cover 100% of the insurance cost for you and 50% for your
               dependents"
           />
