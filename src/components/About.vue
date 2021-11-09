@@ -1,9 +1,8 @@
 <template>
   <div class="dm-about">
     <h1>About Dunder Mifflin</h1>
-    <div>
+    <div class="video-container">
       <iframe
-        height="200px"
         src="https://www.youtube.com/embed/bV8i6oCgiAM"
         title="YouTube video player"
         frameborder="0"
@@ -32,10 +31,10 @@
     <div class="dm-about-slider">
       <VueSlickCarousel
         ref="c1"
-        :infinite="false"
+        :infinite="true"
         :centerMode="true"
         centerPadding="2px"
-        :slidesToShow="1"
+        :slidesToShow="3"
         :slidesToScroll="1"
       >
         <template #prevArrow>
@@ -139,7 +138,7 @@
           ref="c2"
           :centerMode="true"
           centerPadding="2px"
-          :slidesToShow="1"
+          :slidesToShow="slidesToShow"
           :slidesToScroll="1"
         >
           <template #prevArrow>
@@ -211,6 +210,16 @@ import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 export default {
   name: "About",
   components: { VueSlickCarousel },
+  data() {
+    return {
+      slidesToShow: 1,
+    };
+  },
+  mounted() {
+    if (window.screen.width >= 768) {
+      this.slidesToShow = 3;
+    }
+  },
 };
 </script>
 
@@ -357,30 +366,57 @@ dm-about-news > vue-slick-carousel {
   -webkit-box-orient: vertical;
   display: -webkit-box;
 }
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 @media (min-width: 768px) {
   .dm-about {
     padding: 36px 48px;
+    background-color: #fff;
+    border-radius: 12px !important;
   }
-  .dm-about-slider {
+  /* .dm-about-slider {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(4, minmax(240px, 2fr));
-  }
+  } */
   .dm-about-more-details {
     display: flex;
     padding: 0 12px 0;
   }
-  .dm-about-news {
+  /* .dm-about-news {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(4, minmax(240px, 2fr));
-  }
+  } */
 }
 
 @media (min-width: 1024px) {
   .dm-about-all-details {
     flex-wrap: nowrap;
+  }
+  .dm-about-slider-data {
+    /* width: 100%;
+    height: 282px; */
+  }
+  ::v-deep .slick-slide {
+    margin: 0 10px !important;
+
+    width: 100%;
+  }
+  /* the parent */
+  ::v-deep .slick-list {
+    margin: 0 -17px !important;
   }
 }
 </style>

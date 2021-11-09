@@ -21,6 +21,7 @@ export default {
             },
             axisLabel: {
               show: true,
+              // formatter: "barGap: '20%'",
             },
             axisTick: {
               show: false,
@@ -51,8 +52,8 @@ export default {
             name: "Base Salary",
             type: "bar",
             stack: "Ad",
-            barWidth: 75,
-            barGap: 40,
+            barWidth: 50,
+            barGap: "40%",
             barCategoryGap: "57%",
 
             data: [100000, 100000, 100000, 100000, 100000],
@@ -66,7 +67,7 @@ export default {
             type: "bar",
             stack: "Ad",
             barWidth: 75,
-            barGap: 40,
+            barGap: "40%",
             barCategoryGap: "57%",
             groupPadding: 5,
             data: [77500, 77500, 77500, 77500, 77500],
@@ -79,7 +80,7 @@ export default {
             type: "bar",
             stack: "Ad",
             barWidth: 75,
-            barGap: 40,
+            barGap: "40%",
             barCategoryGap: "57%",
             data: [10000, 0, 0, 0, 0],
             itemStyle: {
@@ -91,7 +92,7 @@ export default {
             type: "bar",
             stack: "Ad",
             barWidth: 75,
-            barGap: 40,
+            barGap: "40%",
             barCategoryGap: "57%",
             data: [0, 0, 0, 0, 0],
             itemStyle: {
@@ -104,7 +105,7 @@ export default {
             stack: "Ad",
             data: [20400, 19400, 21000, 22000, 23000],
             barWidth: 75,
-            barGap: 40,
+            barGap: "40%",
             barCategoryGap: "57%",
             itemStyle: {
               barBorderRadius: [20, 20, 0, 0],
@@ -162,7 +163,10 @@ export default {
   height: 300px;
 }
 
-@media (min-width: 560px) {
+@media (min-width: 768px) {
+  #main {
+    height: 400px;
+  }
 }
 </style>
 

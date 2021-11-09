@@ -178,17 +178,35 @@ p {
     font-size: 16px !important;
   }
 }
-
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .dm-home-main {
     display: flex;
-    flex: 0 0 50%;
+
+    /* flex: 0 0 48%; */
+    justify-content: space-between;
   }
+  .dm-home-page {
+    border-radius: 12px !important;
+  }
+  .dm-home-image,
+  .dm-home-heading {
+    width: 48%;
+  }
+  .dm-home-job-desc {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
   .dm-home-job-salary-details {
     display: flex;
     flex-wrap: nowrap;
     text-align: left;
     justify-content: flex-start;
+    max-width: 100%;
+  }
+  .dm-home-job-salary-details-data {
+    flex: 1;
   }
 }
 </style>

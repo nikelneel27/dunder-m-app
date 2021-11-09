@@ -51,12 +51,16 @@ export default {
 .fa-chevron-down {
   padding-left: 12px;
 }
+.fa-exclamation-circle {
+  margin-left: 8px;
+}
 
 @media (min-width: 768px) {
   .dm-benefits-accordion {
     display: flex;
     justify-content: space-between !important;
     align-items: center;
+    width: 100%;
   }
 }
 </style>

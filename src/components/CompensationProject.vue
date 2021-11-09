@@ -178,6 +178,7 @@ export default {
 <style scoped>
 .dm-compensation {
   padding-top: 10px;
+  background-color: #fff;
 }
 .dm-compensation-year1 {
   border: 1px solid #ccc;
@@ -313,15 +314,29 @@ toggle-button .v-switch-button {
 } */
 
 @media (min-width: 768px) {
+  .dm-compensation {
+    border-radius: 12px !important;
+  }
+
   .dm-compensation-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(6, minmax(240px, 2fr));
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .dm-compensation-year1 {
+    margin-top: 90px;
+  }
+  .dm-compensation-company-peformance {
+    width: 70%;
   }
   .dm-compensation-company-slider {
     display: flex;
     justify-content: space-around;
     align-items: center;
+  }
+  .dm-compensation-company-slider-annual-salary,
+  .dm-compensation-company-slider-taget-bonus {
+    width: 40%;
   }
 }
 </style>

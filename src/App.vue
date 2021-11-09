@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- <Confetti /> -->
     <Home />
     <!-- <div class="bg-color"></div> -->
     <Navigation />
@@ -31,6 +32,7 @@
 </template>
 
 <script>
+// import Confetti from "./components/Confetti.vue";
 import Home from "./components/Home.vue";
 import Navigation from "./components/Navigation.vue";
 import Equity from "./components/Equity.vue";
@@ -47,20 +49,7 @@ export default {
     Benefits,
     CompensationProject,
     About,
-  },
-  mounted() {
-    const confetti = require("canvas-confetti");
-    var myCanvas = document.createElement("canvas");
-    document.body.appendChild(myCanvas);
-
-    var myConfetti = confetti.create(myCanvas, {
-      resize: true,
-      useWorker: true,
-    });
-    myConfetti({
-      particleCount: 100,
-      spread: 160,
-    });
+    // Confetti,
   },
 };
 </script>
@@ -83,6 +72,7 @@ body {
   padding: 24px 0 78px;
   background-color: white;
 }
+
 .dm-home-page,
 .dm-equity,
 .dm-benefits,
@@ -116,6 +106,10 @@ body {
   }
   .footer-image {
     flex: 4;
+  }
+  body {
+    background-color: #10131f;
+    padding: 48px 24px;
   }
 }
 </style>

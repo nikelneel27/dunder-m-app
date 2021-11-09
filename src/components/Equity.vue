@@ -554,6 +554,10 @@ export default {
   }
 }
 @media (min-width: 768px) {
+  .dm-equity {
+    border-radius: 12px !important;
+  }
+
   .dm-equity-drop-down img,
   .dm-equity-vesting-img img,
   .dm-equity-image img,

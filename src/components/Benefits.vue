@@ -2,7 +2,20 @@
   <div class="dm-benefits">
     <div class="dm-benefits-section">
       <div class="dm-benefits-section-top">
-        <div class="dm-benefits-section-title">Benefits</div>
+        <div class="dm-benefits-section-title">
+          Benefits
+          <!-- <div v-if="isDesktop" class="dm-benefits-addition-section">
+            <p>
+              For you and<i
+                @click="minusDependentsCount"
+                class="fas fa-minus-circle"
+              ></i
+              ><span>{{ numberOfDepends }}</span>
+              <i @click="addDependentsCount" class="fas fa-plus-circle"></i
+              >dependents
+            </p>
+          </div> -->
+        </div>
         <div class="dm-benefits-section-right">
           <div>$ {{ annualValueCalc | currencyFilter }}</div>
           <p>Estimated annual value</p>
@@ -112,6 +125,7 @@ export default {
   data() {
     return {
       numberOfDepends: 0,
+      isDesktop: false,
     };
   },
   computed: {
@@ -130,6 +144,9 @@ export default {
     dentalAndVisionValueCalc() {
       return 200 * this.numberOfDepends + 400;
     },
+  },
+  mounted() {
+    this.isDesktop = window.screen.width >= 768;
   },
 
   methods: {
@@ -154,6 +171,7 @@ export default {
 <style scoped>
 .dm-benefits {
   padding-top: 30px;
+  background-color: #fff;
 }
 .dm-benefits-details {
   border: 1px solid #ccc;
@@ -208,6 +226,7 @@ export default {
 @media (min-width: 768px) {
   .dm-benefits {
     padding: 36px 48px;
+    border-radius: 12px !important;
   }
 
   .dm-benefits-section-right > div {

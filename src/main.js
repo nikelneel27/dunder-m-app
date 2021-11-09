@@ -3,6 +3,9 @@ import App from './App.vue'
 import ToggleButton from 'vue-js-toggle-button'
 import VTooltip from "v-tooltip";
 import { store } from './store'
+import Particles from "particles.vue";
+
+Vue.use(Particles);
 
 
 Vue.use(VTooltip);
