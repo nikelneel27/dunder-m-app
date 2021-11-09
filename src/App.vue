@@ -112,4 +112,9 @@ body {
     padding: 48px 24px;
   }
 }
+@media (min-width: 1024px) {
+  body {
+    padding: 48px 85px;
+  }
+}
 </style>

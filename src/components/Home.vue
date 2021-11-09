@@ -188,6 +188,11 @@ p {
   .dm-home-page {
     border-radius: 12px !important;
   }
+  .dm-home-image img {
+    height: 300px;
+    width: 100%;
+  }
+
   .dm-home-image,
   .dm-home-heading {
     width: 48%;
