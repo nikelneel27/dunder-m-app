@@ -19,7 +19,7 @@
           actions taken in reliance thereon.
         </p>
       </div>
-      <div>
+      <div class="footer-image">
         <span>Powered by</span>
         <span class="DM-footer-img-span"
           ><a target="_blank" href="https://www.figurehr.com"
@@ -47,6 +47,20 @@ export default {
     Benefits,
     CompensationProject,
     About,
+  },
+  mounted() {
+    const confetti = require("canvas-confetti");
+    var myCanvas = document.createElement("canvas");
+    document.body.appendChild(myCanvas);
+
+    var myConfetti = confetti.create(myCanvas, {
+      resize: true,
+      useWorker: true,
+    });
+    myConfetti({
+      particleCount: 100,
+      spread: 160,
+    });
   },
 };
 </script>
@@ -89,7 +103,19 @@ body {
   color: white;
   /* margin-bottom: ; */
 }
-.DM-footer-img-span {
-  /* margin-bottom: 0px; */
+
+@media (min-width: 570px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    display: flex;
+  }
+  .footer-image {
+    flex: 4;
+  }
 }
 </style>

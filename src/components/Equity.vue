@@ -547,6 +547,36 @@ export default {
   opacity: 1;
   transition: opacity 0.15s;
 } */
+
+@media (min-width: 570px) {
+  .dm-equity {
+    padding: 36px 48px;
+  }
+}
+@media (min-width: 768px) {
+  .dm-equity-drop-down img,
+  .dm-equity-vesting-img img,
+  .dm-equity-image img,
+  .dm-equity-key-details-image img,
+  .dm-equity-faqs-image img {
+    height: 300px;
+  }
+  .dm-equity-right-side-val {
+    font-size: 3rem;
+  }
+
+  .dm-equity-projected-value span {
+    font-size: 2.5rem;
+  }
+  .dm-equity-key-details-data span {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .dm-equity-right-side-val {
+    font-size: 4rem;
+  }
+}
 </style>
 
 

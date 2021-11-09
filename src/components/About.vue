@@ -29,14 +29,6 @@
       </p>
     </div>
 
-    <!-- <div>
-        <span class="dm-about-slide-icon">
-          <i class="fas fa-chevron-left"></i
-        ></span>
-        <span class="dm-about-slide-icon">
-          <i class="fas fa-chevron-right"></i
-        ></span>
-      </div> -->
     <div class="dm-about-slider">
       <VueSlickCarousel
         ref="c1"
@@ -87,52 +79,52 @@
           </p>
         </div>
       </VueSlickCarousel>
+    </div>
 
-      <div>
-        <div class="dm-about-all-details">
-          <div class="dm-about-details">
-            <div class="dm-about-details-title">Website</div>
-            <div>
-              <a href="https://www.peacocktv.com/stream-tv/the-office"
-                >https://www.peacocktv.com/stream-tv/the-office</a
-              >
-            </div>
-          </div>
-          <div class="dm-about-details">
-            <div class="dm-about-details-title">Headquarters</div>
-            <div>Scranton, PA</div>
-          </div>
-          <div class="dm-about-details">
-            <div class="dm-about-details-title">Company Size</div>
-            <div>50-99</div>
-          </div>
-          <div class="dm-about-details">
-            <div class="dm-about-details-title">Total Funding</div>
-            <div>$20M</div>
-          </div>
-          <div class="dm-about-details">
-            <div class="dm-about-details-title">Last Funding Type</div>
-            <div>Series B</div>
+    <div>
+      <div class="dm-about-all-details">
+        <div class="dm-about-details">
+          <div class="dm-about-details-title">Website</div>
+          <div>
+            <a href="https://www.peacocktv.com/stream-tv/the-office"
+              >https://www.peacocktv.com/stream-tv/the-office</a
+            >
           </div>
         </div>
-        <div class="dm-about-more-details">
-          <div class="dm-about-more-details-data">
-            <div class="dm-about-more-details-data-title">Investors</div>
-            <div class="dm-about-more-details-data-link">
-              <a
-                href="https://theoffice.fandom.com/wiki/The_Michael_Scott_Paper_Company"
-                >Vance Refrigeration, The Michael Scott Paper Company, Sabre
-                International, Athleap</a
-              >
-            </div>
+        <div class="dm-about-details">
+          <div class="dm-about-details-title">Headquarters</div>
+          <div>Scranton, PA</div>
+        </div>
+        <div class="dm-about-details">
+          <div class="dm-about-details-title">Company Size</div>
+          <div>50-99</div>
+        </div>
+        <div class="dm-about-details">
+          <div class="dm-about-details-title">Total Funding</div>
+          <div>$20M</div>
+        </div>
+        <div class="dm-about-details">
+          <div class="dm-about-details-title">Last Funding Type</div>
+          <div>Series B</div>
+        </div>
+      </div>
+      <div class="dm-about-more-details">
+        <div class="dm-about-more-details-data">
+          <div class="dm-about-more-details-data-title">Investors</div>
+          <div class="dm-about-more-details-data-link">
+            <a
+              href="https://theoffice.fandom.com/wiki/The_Michael_Scott_Paper_Company"
+              >Vance Refrigeration, The Michael Scott Paper Company, Sabre
+              International, Athleap</a
+            >
           </div>
-          <div class="dm-about-more-details-data">
-            <div class="dm-about-more-details-data-title">Leadership</div>
-            <div>
-              David Wallace (CEO), Michael Scott (Regional Manager), Jan
-              Levinson (VP Sales), Jim Halpert (Sales Manager), Pamela Beesly
-              (Head of Communications)
-            </div>
+        </div>
+        <div class="dm-about-more-details-data">
+          <div class="dm-about-more-details-data-title">Leadership</div>
+          <div>
+            David Wallace (CEO), Michael Scott (Regional Manager), Jan Levinson
+            (VP Sales), Jim Halpert (Sales Manager), Pamela Beesly (Head of
+            Communications)
           </div>
         </div>
       </div>
@@ -364,6 +356,32 @@ dm-about-news > vue-slick-carousel {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   display: -webkit-box;
+}
+
+@media (min-width: 768px) {
+  .dm-about {
+    padding: 36px 48px;
+  }
+  .dm-about-slider {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(240px, 2fr));
+  }
+  .dm-about-more-details {
+    display: flex;
+    padding: 0 12px 0;
+  }
+  .dm-about-news {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(240px, 2fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .dm-about-all-details {
+    flex-wrap: nowrap;
+  }
 }
 </style>
 

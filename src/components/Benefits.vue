@@ -204,4 +204,17 @@ export default {
   text-align: left;
   padding: 20px 0 20px;
 }
+
+@media (min-width: 768px) {
+  .dm-benefits {
+    padding: 36px 48px;
+  }
+
+  .dm-benefits-section-right > div {
+    font-size: 4rem;
+  }
+  .dm-benefits-addition-section {
+    text-align: left;
+  }
+}
 </style>

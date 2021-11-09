@@ -3,31 +3,36 @@
     <div class="dm-image-logo">
       <img src="../assets/DM-logo.png" alt="" />
     </div>
-    <div class="dm-home-heading"><h1>Welcome to the team, Jane.</h1></div>
-    <div class="dm-home-main-desc">
-      <p>
-        Congratulations! The team at Dunder Mifflin is very excited to extend
-        this offer to you to join our family. We believe you would be a perfect
-        fit on our team and make a huge impact here. We hope you join us on our
-        mission to make paper more accessible and affordable for all.
-      </p>
-    </div>
-    <div class="dm-home-job-desc">
-      <div>
-        <span>Title: <strong>Software Engineer</strong> </span>
+    <div class="dm-home-main">
+      <div class="dm-home-heading">
+        <h1>Welcome to the team, Jane.</h1>
+        <div class="dm-home-main-desc">
+          <p>
+            Congratulations! The team at Dunder Mifflin is very excited to
+            extend this offer to you to join our family. We believe you would be
+            a perfect fit on our team and make a huge impact here. We hope you
+            join us on our mission to make paper more accessible and affordable
+            for all.
+          </p>
+        </div>
+        <div class="dm-home-job-desc">
+          <div>
+            <span>Title: <strong>Software Engineer</strong> </span>
+          </div>
+          <div>
+            <span>Location: <strong>San Francisco</strong> </span>
+          </div>
+          <div>
+            <span>Offer expires: <strong>Apr 1, 2030</strong> </span>
+          </div>
+        </div>
       </div>
-      <div>
-        <span>Location: <strong>San Francisco</strong> </span>
+      <div class="dm-home-image">
+        <img
+          src="https://figurecdn.com/companies/f4698cc4-14cd-46fa-b068-4b0fa7840536/company_images/offer_letter_welcome/94848257d5b7d596b6aa98597219b3ed.jpeg"
+          alt=""
+        />
       </div>
-      <div>
-        <span>Offer expires: <strong>Apr 1, 2030</strong> </span>
-      </div>
-    </div>
-    <div class="dm-home-image">
-      <img
-        src="https://figurecdn.com/companies/f4698cc4-14cd-46fa-b068-4b0fa7840536/company_images/offer_letter_welcome/94848257d5b7d596b6aa98597219b3ed.jpeg"
-        alt=""
-      />
     </div>
     <div class="dm-home-job-salary-details">
       <div class="dm-home-job-salary-details-data">
@@ -157,5 +162,33 @@ p {
 }
 .dm-home-secondary-desc p {
   margin-top: 0;
+}
+
+@media (min-width: 570px) {
+  .dm-home-page {
+    padding: 36px 48px;
+  }
+  .dm-home-heading h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .dm-home-secondary-desc p {
+    font-size: 16px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dm-home-main {
+    display: flex;
+    flex: 0 0 50%;
+  }
+  .dm-home-job-salary-details {
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: left;
+    justify-content: flex-start;
+  }
 }
 </style>

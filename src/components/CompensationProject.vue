@@ -7,143 +7,145 @@
         Explore with various scenarios and see your earning potential.
       </p>
     </div>
-    <div class="dm-compensation-year1">
-      <span class="dm-compensation-year1-title">Year 1</span>
+    <div class="dm-compensation-grid">
+      <div class="dm-compensation-year1">
+        <span class="dm-compensation-year1-title">Year 1</span>
 
-      <div class="dm-compensation-year1-data">
-        <div>
-          <div>Benefits</div>
-          <div>$20,400</div>
+        <div class="dm-compensation-year1-data">
+          <div>
+            <div>Benefits</div>
+            <div>$20,400</div>
+          </div>
+          <div class="dm-compensation-year1-data-button">
+            <toggle-button
+              @change="onChangeEventHandler"
+              :switch-color="{
+                checked: 'rgb(255, 68, 141)',
+                unchecked: 'rgba(255, 68, 141, 0.4)',
+                disabled: '#CCCCCC',
+              }"
+            />
+          </div>
         </div>
-        <div class="dm-compensation-year1-data-button">
-          <toggle-button
-            @change="onChangeEventHandler"
-            :switch-color="{
-              checked: 'rgb(255, 68, 141)',
-              unchecked: 'rgba(255, 68, 141, 0.4)',
-              disabled: '#CCCCCC',
-            }"
-          />
+        <div class="dm-compensation-year1-data">
+          <div>
+            <div>Target Bonus</div>
+            <div>$10,000</div>
+          </div>
+          <div>
+            <toggle-button
+              @change="onChangeEventHandler"
+              :switch-color="{
+                checked: 'rgb(108, 122, 255)',
+                unchecked: 'rgba(108, 122, 255,0.4)',
+                disabled: '#CCCCCC',
+              }"
+            />
+          </div>
+        </div>
+        <div class="dm-compensation-year1-data">
+          <div>
+            <div>Sign-on Bonus</div>
+            <div>$10,000</div>
+          </div>
+          <div>
+            <toggle-button
+              @change="onChangeEventHandler"
+              :switch-color="{
+                checked: 'rgb(85, 99, 203)',
+                unchecked: 'rgba(85, 99, 203,0.4)',
+                disabled: '#CCCCCC',
+              }"
+            />
+          </div>
+        </div>
+        <div class="dm-compensation-year1-data">
+          <div>
+            <div>Equity</div>
+            <div>$77,500</div>
+          </div>
+          <div>
+            <toggle-button
+              @change="onChangeEventHandler"
+              :switch-color="{
+                checked: 'rgb(255, 199, 66)',
+                unchecked: 'rgba(255, 199, 66,0.4)',
+                disabled: '#CCCCCC',
+              }"
+            />
+            <!-- <toggle-button @change="onChangeEventHandler" /> -->
+          </div>
+        </div>
+        <div class="dm-compensation-year1-data">
+          <div>
+            <div>Base Salary</div>
+            <div>$100,000</div>
+          </div>
+          <div>
+            <toggle-button
+              @change="onChangeEventHandler"
+              :switch-color="{
+                checked: 'rgb(19, 204, 165)',
+                unchecked: 'rgba(19, 204, 165,0.4)',
+                disabled: '#CCCCCC',
+              }"
+            />
+          </div>
         </div>
       </div>
-      <div class="dm-compensation-year1-data">
+      <div class="dm-compensation-company-peformance">
         <div>
-          <div>Target Bonus</div>
-          <div>$10,000</div>
+          Company's Performance <i class="fas fa-exclamation-circle"></i>
+          <div class="dm-compensation-company-drop-down">
+            <label for="touch"
+              ><span>{{ selectedOption }}</span></label
+            >
+            <input type="checkbox" id="touch" />
+
+            <ul class="slide">
+              <li><a href="#">Current - 1x</a></li>
+              <li><a href="#">Good - 3x</a></li>
+              <li><a href="#">Staples - 5x</a></li>
+              <li><a href="#">Office Depot - 10x</a></li>
+              <li><a href="#">Custom - 1x</a></li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <toggle-button
-            @change="onChangeEventHandler"
-            :switch-color="{
-              checked: 'rgb(108, 122, 255)',
-              unchecked: 'rgba(108, 122, 255,0.4)',
-              disabled: '#CCCCCC',
-            }"
-          />
-        </div>
-      </div>
-      <div class="dm-compensation-year1-data">
-        <div>
-          <div>Sign-on Bonus</div>
-          <div>$10,000</div>
-        </div>
-        <div>
-          <toggle-button
-            @change="onChangeEventHandler"
-            :switch-color="{
-              checked: 'rgb(85, 99, 203)',
-              unchecked: 'rgba(85, 99, 203,0.4)',
-              disabled: '#CCCCCC',
-            }"
-          />
-        </div>
-      </div>
-      <div class="dm-compensation-year1-data">
-        <div>
-          <div>Equity</div>
-          <div>$77,500</div>
-        </div>
-        <div>
-          <toggle-button
-            @change="onChangeEventHandler"
-            :switch-color="{
-              checked: 'rgb(255, 199, 66)',
-              unchecked: 'rgba(255, 199, 66,0.4)',
-              disabled: '#CCCCCC',
-            }"
-          />
-          <!-- <toggle-button @change="onChangeEventHandler" /> -->
-        </div>
-      </div>
-      <div class="dm-compensation-year1-data">
-        <div>
-          <div>Base Salary</div>
-          <div>$100,000</div>
-        </div>
-        <div>
-          <toggle-button
-            @change="onChangeEventHandler"
-            :switch-color="{
-              checked: 'rgb(19, 204, 165)',
-              unchecked: 'rgba(19, 204, 165,0.4)',
-              disabled: '#CCCCCC',
-            }"
-          />
+
+        <div class="dm-compensation-company-chart">
+          <Echart :value1="value1" :value2="value2" />
+          <!-- <LineChart /> -->
         </div>
       </div>
     </div>
-    <div class="dm-compensation-company-peformance">
-      <div>
-        Company's Performance <i class="fas fa-exclamation-circle"></i>
-        <div class="dm-compensation-company-drop-down">
-          <label for="touch"
-            ><span>{{ selectedOption }}</span></label
-          >
-          <input type="checkbox" id="touch" />
-
-          <ul class="slide">
-            <li><a href="#">Current - 1x</a></li>
-            <li><a href="#">Good - 3x</a></li>
-            <li><a href="#">Staples - 5x</a></li>
-            <li><a href="#">Office Depot - 10x</a></li>
-            <li><a href="#">Custom - 1x</a></li>
-          </ul>
+    <div class="dm-compensation-company-slider">
+      <div class="dm-compensation-company-slider-annual-salary">
+        <div class="dm-compensation-company-slider-annual-salary-text">
+          Annual base salary increase: <strong> {{ value1 }} % </strong>
         </div>
+
+        <vue-slider
+          v-model="value1"
+          :lazy="true"
+          :interval="0.1"
+          :min="0"
+          :max="15"
+          v-bind="options"
+        ></vue-slider>
       </div>
-
-      <div class="dm-compensation-company-chart">
-        <Echart :value1="value1" :value2="value2" />
-        <!-- <LineChart /> -->
-      </div>
-      <div class="dm-compensation-company-slider">
-        <div class="dm-compensation-company-slider-annual-salary">
-          <div class="dm-compensation-company-slider-annual-salary-text">
-            Annual base salary increase: <strong> {{ value1 }} % </strong>
-          </div>
-
-          <vue-slider
-            v-model="value1"
-            :lazy="true"
-            :interval="0.1"
-            :min="0"
-            :max="15"
-            v-bind="options"
-          ></vue-slider>
+      <div class="dm-compensation-company-slider-taget-bonus">
+        <div class="dm-compensation-company-slider-annual-salary-text">
+          Target bonus: <strong>{{ value2 }} %</strong>
         </div>
-        <div class="dm-compensation-company-slider-taget-bonus">
-          <div class="dm-compensation-company-slider-annual-salary-text">
-            Target bonus: <strong>{{ value2 }} %</strong>
-          </div>
 
-          <vue-slider
-            v-model="value2"
-            :lazy="true"
-            :interval="0.1"
-            :min="0"
-            :max="10"
-            v-bind="options"
-          ></vue-slider>
-        </div>
+        <vue-slider
+          v-model="value2"
+          :lazy="true"
+          :interval="0.1"
+          :min="0"
+          :max="10"
+          v-bind="options"
+        ></vue-slider>
       </div>
     </div>
   </div>
@@ -309,4 +311,17 @@ toggle-button .v-switch-button {
   width: 24px;
   height: 24px;
 } */
+
+@media (min-width: 768px) {
+  .dm-compensation-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(6, minmax(240px, 2fr));
+  }
+  .dm-compensation-company-slider {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
 </style>

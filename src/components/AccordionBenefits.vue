@@ -51,4 +51,12 @@ export default {
 .fa-chevron-down {
   padding-left: 12px;
 }
+
+@media (min-width: 768px) {
+  .dm-benefits-accordion {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+  }
+}
 </style>

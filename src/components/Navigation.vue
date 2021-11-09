@@ -68,4 +68,10 @@ export default {
   opacity: 0.8;
   padding-bottom: 4px;
 }
+
+@media (min-width: 570px) {
+  .dm-navigation {
+    display: none;
+  }
+}
 </style>

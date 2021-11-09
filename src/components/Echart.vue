@@ -6,19 +6,10 @@
 import * as echarts from "echarts";
 
 export default {
-  // updateCharts(val) {
-  //       const updatedSeries = this.option.series.map(item => {
-  //        const data = item.data.map(value => value*val)
-  //         return {
-  //           ...this.option.series,
-  //           data ,
-  //         }
-  //       }
-
   data() {
     return {
       option: {
-        //   legend: {},
+        // legend: {},
         xAxis: [
           {
             type: "category",
@@ -61,11 +52,13 @@ export default {
             type: "bar",
             stack: "Ad",
             barWidth: 75,
+            barGap: 40,
+            barCategoryGap: "57%",
+
             data: [100000, 100000, 100000, 100000, 100000],
             itemStyle: {
               barBorderRadius: [0, 0, 20, 20],
               color: "rgb(19, 204, 165)",
-              padding: 10,
             },
           },
           {
@@ -73,10 +66,12 @@ export default {
             type: "bar",
             stack: "Ad",
             barWidth: 75,
+            barGap: 40,
+            barCategoryGap: "57%",
+            groupPadding: 5,
             data: [77500, 77500, 77500, 77500, 77500],
             itemStyle: {
               color: "rgb(255, 199, 66)",
-              padding: [5, 4, 4, 5],
             },
           },
           {
@@ -84,10 +79,11 @@ export default {
             type: "bar",
             stack: "Ad",
             barWidth: 75,
+            barGap: 40,
+            barCategoryGap: "57%",
             data: [10000, 0, 0, 0, 0],
             itemStyle: {
               color: "rgb(85, 99, 203)",
-              padding: [5, 4, 4, 5],
             },
           },
           {
@@ -95,23 +91,24 @@ export default {
             type: "bar",
             stack: "Ad",
             barWidth: 75,
+            barGap: 40,
+            barCategoryGap: "57%",
             data: [0, 0, 0, 0, 0],
             itemStyle: {
               color: "rgb(108, 122, 255)",
-              padding: [5, 4, 4, 5],
             },
           },
           {
             name: "Benefits",
             type: "bar",
             stack: "Ad",
-
             data: [20400, 19400, 21000, 22000, 23000],
             barWidth: 75,
+            barGap: 40,
+            barCategoryGap: "57%",
             itemStyle: {
               barBorderRadius: [20, 20, 0, 0],
               color: "rgb(255, 68, 141)",
-              padding: [5, 4, 4, 5],
             },
           },
         ],
@@ -163,6 +160,9 @@ export default {
 #main {
   width: 100%;
   height: 300px;
+}
+
+@media (min-width: 560px) {
 }
 </style>
 
